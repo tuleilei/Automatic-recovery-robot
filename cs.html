@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //数组切割分组
+        function GroupByNum(data, groupByNum) {
+            const result = Array.apply(null, {
+                length: Math.ceil(data.length / groupByNum)
+            }).map((x, i) => {
+                return data.slice(i * groupByNum, (i + 1) * groupByNum)
+            })
+            //第二种
+            const Arr = data.map((x, i) => {
+                return data.slice(i * groupByNum, (i + 1) * groupByNum)
+            })
+            const result1 = Arr.filter(item => item.length != 0)
+            return result||result1
+            // const result=this.SETUP_GSSJHQSX_VALUE.filter(item=> item.value==="")
+            // if(result==[]){
+
+            // }else{
+
+            // }
+        }
+    </script>
+    <script>
+
+        const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+        const groupByNum = 2;
+
+        const result=GroupByNum(data, groupByNum)
+        console.log(result)
+        
+
+        // console.log(result)
+        // function Person(name,age){
+        //     this.name=name;
+        //     this.age=age
+        // }
+        // function Student(name,age,grade){
+        //     Person.apply(this,arguments);//继承
+        //     // Person.call(this,name,age)
+        //     this.grade=grade;
+        // }
+        // var student=new Student('zhang',10,'一年级')
+        // console.log(student.name,student.age,student.grade)
+    </script>
+</body>
+
+</html>
